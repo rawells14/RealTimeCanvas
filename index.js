@@ -6,7 +6,7 @@ var io = require('socket.io')(http);
 var drawnPaths = [];
 
 app.use(express.static('public'));
-
+app.set("port", process.env.PORT || 3000);
 app.get("/", function(req, res){
 	req.render("index.html");
 });
@@ -25,6 +25,6 @@ app.get("/foo", function(req, res){
 });
 
 
-http.listen(3000, function(){
+http.listen(app.get("port"), function(){
 	console.log("Listening on port 3000");
 });
