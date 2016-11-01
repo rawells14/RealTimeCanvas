@@ -20,11 +20,6 @@ io.on('connection', function(socket){
 	})
 });
 
-app.get("/foo", function(req, res){
-	res.send("This is the foo route");
-});
-
-
 http.listen(app.get("port"), function(){
 	console.log("Listening on port 3000");
 });
